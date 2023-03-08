@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    height: 350px;
+}
+  
+body{
+    color: rgb(105, 102, 102);
+}
+.header {
+    grid-area: header;
+    background-color: #a3a0a0ad;
+    height: 100%;
+    padding: 30px;
+    text-align: center;
+}
+  
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+      'header header header header' 
+      'left left right right';
+} 
+  
+.left,
+.right {
+    padding: 10px;
+    margin: 10px;
+    height: 100%;
+}
+  
+.olul{
+    margin-left: 50px;
+}
+.left {
+    grid-area: left;
+    text-align: center;
+}
+  
+.right {
+    grid-area: right;
+    margin-top: 15%;
+}
+
+.btn{
+    padding: 10px 12px;
+    margin: 10px;
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+    color: grey;
+    border: 1px solid #000000;
+    transition: all .5s ease;
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    background: black;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .5s ease;
+}
+
+.btn:hover::before{
+    width: 100%;
+    box-shadow: 0px 0px 10px 5px #000000;
+    border-radius: 20px;
+    border: 1px solid #000000;
+}
+
+.btn:hover{
+    border-radius: 20px;
+}
+
+@media (max-width: 800px) {
+    .grid-container  {
+        grid-template-areas: 
+        'header header header header' 
+        'left left left left'  
+        'right right right right';
+    }
+    img{
+        height: 20em;
+    }
+  }
